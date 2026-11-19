@@ -1,0 +1,1150 @@
+/*
+ * Base styles and the shared classes every page uses: the shell and its scroll model, cards,
+ * buttons, form fields, info buttons, state badges, lists and tables, the code box, the catalog's
+ * question blocks, the tutorial, the device check, the conversation view (transcript, status pill,
+ * outcome message), the team's conversation details, toasts and the confirmation dialog. Colours
+ * come only from tokens.css. Badges are named after the backend's enum values (badge-ready,
+ * badge-used, ...), so a page writes `badge-${state}` and never picks a colour itself.
+ *
+ * The scroll model: the window never scrolls. The shell is exactly as high as the screen, the
+ * header stays at the top, and `main` is the page's one scroll area. A fill page (`.page-fill`: a
+ * page whose main content is one list or the chat) is exactly as high as `main`: its fixed parts
+ * stay in view, and only the `.scroll-pane` inside its `.card-fill` (in the `.fill-area`) scrolls.
+ * Every other page scrolls inside `main` as a whole, and a `.scroll-pane` there is capped in height.
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+h1 {
+  font-size: 1.35rem;
+  margin: 0 0 1rem;
+}
+
+h2 {
+  font-size: 1.15rem;
+  margin: 0 0 0.75rem;
+}
+
+h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Shell: exactly as high as the screen, so the header stays in view and the window never scrolls */
+.shell {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* The app's name with the area („Teambereich" or „Gründerbereich") as a small pill below it */
+.brand-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+}
+
+.brand {
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+/* A small blue label: the header's area, and the „Rückfragen" divider in the live chat */
+.label-pill {
+  padding: 0.05rem 0.55rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-on-primary);
+  background: var(--color-primary);
+  border-radius: 999px;
+}
+
+/* The header's right end: the mute button during a call, the user's name and „Abmelden" */
+.header-end {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
+}
+
+.user {
+  color: var(--color-muted);
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  color: var(--color-muted);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav a.active {
+  color: var(--color-primary);
+}
+
+/* The page's one scroll area. It spans the full width, so its scrollbar sits at the screen's edge,
+   while the content inside stays centered. */
+.main {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.content {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem;
+}
+
+/* The team area is wider: its tables and the conversation details use the room */
+.content-wide {
+  max-width: 1100px;
+}
+
+/* A fill page, as high as `main`: its fixed parts (title, filters, forms, the conversation's bar
+   and outcome) stay in view, and its list or chat sits in a `.fill-area` below them. */
+.content:has(> .page-fill) {
+  height: 100%;
+}
+
+.page-fill {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.page-fill > * {
+  flex: none;
+}
+
+/* The height left below the fixed parts. It is invisible, so the card inside keeps the height of
+   its content and never stretches into an empty box; once its content reaches the bottom of the
+   screen, the card stops there and only its `.scroll-pane` scrolls. The area never gets lower than
+   18rem (a list of about 10rem below a card's own fixed parts, such as the filters): on a screen
+   too low for that, a phone in landscape or a phone with a tall form, `main` scrolls as a whole. */
+.fill-area {
+  flex: 1 1 0;
+  min-height: 18rem;
+}
+
+.card-fill {
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  margin-bottom: 0;
+}
+
+.card-fill > * {
+  flex: none;
+}
+
+/* A scroll area inside a card (a list, a table, the chat). Scrolling it never scrolls the page
+   behind it. In a fill page it takes the height left in its card; anywhere else it is capped. */
+.scroll-pane {
+  max-height: min(60dvh, 40rem);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.card-fill > .scroll-pane {
+  flex: 0 1 auto;
+  min-height: 0;
+  max-height: none;
+}
+
+/* The title row of a page: the back link, the h1, then a short detail (the date) or the page's
+   action on the right; it wraps on narrow screens. Pages without a back link have a plain h1. */
+.page-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.page-head h1 {
+  margin: 0;
+}
+
+.page-head-action {
+  margin-left: auto;
+}
+
+.page-center {
+  max-width: 26rem;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* Cards */
+.card {
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px var(--color-shadow);
+}
+
+.form-card {
+  max-width: 26rem;
+  margin-inline: auto;
+}
+
+.welcome {
+  text-align: center;
+}
+
+.welcome-icon {
+  color: var(--color-primary);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+/* Buttons */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.1rem;
+  font: inherit;
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.button:hover {
+  border-color: var(--color-muted);
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.button-primary {
+  color: var(--color-on-primary);
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.button-danger {
+  color: var(--color-on-primary);
+  background: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+.button-primary:hover,
+.button-danger:hover {
+  border-color: var(--color-text);
+}
+
+.button-small {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+/* The pressed mute button: it stands out, so a founder sees at once that the microphone is off */
+.button-muted {
+  color: var(--color-warning);
+  background: var(--color-warning-soft);
+  border-color: var(--color-warning);
+}
+
+.button-large {
+  min-width: 10rem;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+}
+
+/* A button that reads like a link, for secondary ways on (for example „Tutorial überspringen") */
+.link-button {
+  padding: 0;
+  font: inherit;
+  color: var(--color-primary);
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* A square button with only an icon; its label is its aria-label and title */
+.icon-button {
+  display: inline-flex;
+  padding: 0.4rem;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.icon-button:hover {
+  border-color: var(--color-muted);
+}
+
+.icon-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.icon-buttons {
+  display: flex;
+  gap: 0.4rem;
+}
+
+/* Forms */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.form-inline .field {
+  flex: 1 1 14rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+.field input,
+.field select,
+.field textarea {
+  padding: 0.55rem 0.75rem;
+  font: inherit;
+  font-weight: 400;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+/* Two fields side by side on wide screens, one below the other on narrow ones */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.input-code {
+  letter-spacing: 0.08em;
+  text-transform: uppercase; /* only shown in capitals; the backend normalizes the code itself */
+}
+
+.error {
+  margin: 0.75rem 0 0;
+  color: var(--color-danger);
+}
+
+.form .error {
+  margin: 0;
+}
+
+.card-error {
+  margin: 0 0 1rem;
+}
+
+/* A heading or label with an info button (layout/InfoButton.tsx): the explanation wraps onto its
+   own full-width line below */
+.with-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem 0.4rem;
+}
+
+.info-button {
+  display: inline-flex;
+  padding: 0.15rem;
+  color: var(--color-muted);
+  background: none;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.info-button:hover,
+.info-button[aria-expanded="true"] {
+  color: var(--color-primary);
+}
+
+.info-text {
+  flex-basis: 100%;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: var(--color-text);
+  background: var(--color-primary-soft);
+  border-radius: 8px;
+}
+
+.muted {
+  color: var(--color-muted);
+}
+
+/* State badges, one per backend enum value */
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.65rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  border-radius: 999px;
+}
+
+.badge-ready,
+.badge-unused {
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.badge-in_progress {
+  color: var(--color-warning);
+  background: var(--color-warning-soft);
+}
+
+.badge-completed,
+.badge-used {
+  color: var(--color-success);
+  background: var(--color-success-soft);
+}
+
+.badge-unfinished,
+.badge-expired {
+  color: var(--color-muted);
+  background: var(--color-bg);
+}
+
+/* A badge that opens what it refers to (a used access code opens its conversation) */
+.badge-link {
+  text-decoration: underline;
+}
+
+/* Lists and tables */
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.list li:last-child .list-row {
+  border-bottom: none;
+}
+
+/* A list row that opens its item */
+.list-link {
+  padding-inline: 0.5rem;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.list-link:hover {
+  background: var(--color-bg);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.6rem 0.5rem;
+  text-align: left;
+  overflow-wrap: anywhere; /* long emails wrap instead of widening the table */
+}
+
+td {
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* The header row stays in view while its pane scrolls. Its line is a shadow, because a sticky
+   cell's border scrolls away in a collapsed table. */
+th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  background: var(--color-surface);
+  box-shadow: inset 0 -1px 0 var(--color-border);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* A table row that opens its item; its first cell holds the link for the keyboard */
+.row-link {
+  cursor: pointer;
+}
+
+.row-link:hover {
+  background: var(--color-bg);
+}
+
+.cell-detail {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+/* Search and filter above a table */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.filter-search {
+  flex: 1 1 16rem;
+}
+
+/* The code box: a new access code, shown once */
+.code-box {
+  overflow-wrap: anywhere;
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  background: var(--color-primary-soft);
+  border: 1px solid var(--color-primary);
+  border-radius: 10px;
+}
+
+.code-box p {
+  margin: 0;
+}
+
+.code-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+/* A question of the catalog on the settings page */
+.question-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.question-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.question-head h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* The tutorial before a conversation */
+.tutorial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.tutorial p {
+  margin: 0;
+}
+
+.tutorial-icon {
+  color: var(--color-primary);
+}
+
+.tutorial-text {
+  max-width: 28rem;
+  min-height: 3em; /* the buttons stay in place while the slides change */
+  font-size: 1.2rem;
+}
+
+.tutorial .actions {
+  margin-top: 0.5rem;
+}
+
+/* The device check: one row per check */
+.check-row {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.check-row:first-child {
+  padding-top: 0;
+}
+
+.check-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.check-head h2 {
+  flex: 1;
+  margin: 0;
+}
+
+.check-state {
+  color: var(--color-muted);
+}
+
+.check-passed .check-state {
+  color: var(--color-success);
+}
+
+.check-problem .check-state {
+  color: var(--color-danger);
+}
+
+.check-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding-left: 1.85rem;
+}
+
+.check-body:not(:empty) {
+  margin-top: 0.6rem;
+}
+
+.check-body p {
+  margin: 0;
+}
+
+.check-body .field {
+  align-self: stretch;
+}
+
+.row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.meter {
+  align-self: stretch;
+  height: 0.6rem;
+  overflow: hidden;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+}
+
+.meter-fill {
+  height: 100%;
+  background: var(--color-success);
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spin {
+    animation: none;
+  }
+}
+
+/* The conversation view (conversation/ConversationView.tsx): the bar with the status and the
+   actions, the messages in their pane, and the outcome message below them. On the founder's page
+   they fill a `.card-fill`, so the bar and the outcome stay in view and only the messages scroll. */
+.conversation-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* A little room between the bubbles and the pane's scrollbar */
+.conversation-messages {
+  padding-right: 0.25rem;
+}
+
+.conversation-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+  border-radius: 999px;
+}
+
+.status-muted {
+  color: var(--color-warning);
+  background: var(--color-warning-soft);
+}
+
+/* The tones of the note-taker's tools (TOOL_LABELS in labels.ts), shared by the status pill and the
+   tags in the live chat */
+.tone-search {
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.tone-writing {
+  color: var(--color-success);
+  background: var(--color-success-soft);
+}
+
+/* A tool call in the live chat: a small centered pill between the messages, never a bubble */
+.tool-tag {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 999px;
+}
+
+/* The follow-up round in the live chat: a divider with the „Rückfragen" label, then the round's
+   messages and tags on the page's background, so both bubble colours stay readable */
+.follow-up-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: var(--color-bg);
+  border-radius: 12px;
+}
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid var(--color-border);
+}
+
+.transcript {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bubble {
+  max-width: 85%;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.bubble p {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.bubble-founder {
+  align-self: flex-end;
+  background: var(--color-founder-bubble);
+  border-bottom-right-radius: 4px;
+}
+
+.bubble-agent {
+  align-self: flex-start;
+  background: var(--color-agent-bubble);
+  border-bottom-left-radius: 4px;
+}
+
+.bubble-speaker {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.outcome {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+}
+
+.outcome p {
+  margin: 0;
+}
+
+.outcome-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+}
+
+.outcome-completed {
+  background: var(--color-success-soft);
+}
+
+.outcome-completed .outcome-title {
+  color: var(--color-success);
+}
+
+.outcome-unfinished {
+  background: var(--color-warning-soft);
+}
+
+.outcome-unfinished .outcome-title {
+  color: var(--color-warning);
+}
+
+.outcome-in_progress {
+  background: var(--color-primary-soft);
+}
+
+.outcome-summary {
+  padding: 0.75rem 1rem;
+  white-space: pre-wrap;
+  background: var(--color-surface);
+  border-radius: 8px;
+}
+
+/* The team's conversation details: the three fact cards side by side on wide screens and one below
+   the other on narrow ones, then the questionnaire and the collapsible conversation at full width */
+.detail-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.detail-facts > .card {
+  margin-bottom: 0;
+}
+
+/* A card that opens and closes (<details>): its summary line stays visible, with a chevron that
+   turns when it is open */
+.collapsible > summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  list-style: none;
+  cursor: pointer;
+}
+
+.collapsible > summary::-webkit-details-marker {
+  display: none;
+}
+
+.collapsible > summary h2 {
+  margin: 0;
+}
+
+.collapsible[open] > summary {
+  margin-bottom: 1rem;
+}
+
+.collapsible-chevron {
+  color: var(--color-muted);
+  transition: transform 0.15s;
+}
+
+.collapsible[open] .collapsible-chevron {
+  transform: rotate(90deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collapsible-chevron {
+    transition: none;
+  }
+}
+
+.facts {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.facts dt {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.facts dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.prose {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.note {
+  padding: 0.6rem 0.8rem;
+  color: var(--color-warning);
+  background: var(--color-warning-soft);
+  border-radius: 8px;
+}
+
+.questionnaire {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.questionnaire li {
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.questionnaire p {
+  margin: 0.35rem 0 0;
+}
+
+.follow-up {
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--color-primary-soft);
+  border-radius: 8px;
+}
+
+.follow-up p:first-child {
+  margin-top: 0;
+}
+
+/* Toasts and the confirmation dialog (notifications/) */
+.toasts {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: calc(100vw - 2rem);
+}
+
+.toast {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--color-shadow);
+}
+
+.toast-success {
+  color: var(--color-on-primary);
+  background: var(--color-success);
+}
+
+.toast-error {
+  color: var(--color-on-primary);
+  background: var(--color-danger);
+}
+
+.toast-info {
+  color: var(--color-surface);
+  background: var(--color-text);
+}
+
+.dialog {
+  width: calc(100% - 2rem);
+  max-width: 26rem;
+  padding: 1.5rem;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px var(--color-shadow);
+}
+
+.dialog::backdrop {
+  background: var(--color-backdrop);
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 0.75rem 1rem;
+  }
+
+  /* The navigation gets its own line below, and the name gives way to the buttons */
+  .nav {
+    order: 1;
+    flex-basis: 100%;
+  }
+
+  .user {
+    display: none;
+  }
+
+  .content {
+    padding: 0.75rem;
+  }
+
+  .card {
+    padding: 1.1rem;
+  }
+
+  .code {
+    font-size: 1.6rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .question-block {
+    padding: 0.75rem;
+  }
+
+  .badge {
+    white-space: normal;
+    border-radius: 8px; /* a pill shape looks wrong once the text wraps */
+  }
+
+  .bubble {
+    max-width: 92%;
+  }
+
+  .check-body {
+    padding-left: 0;
+  }
+}

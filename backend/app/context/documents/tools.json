@@ -1,0 +1,18 @@
+{
+  "tools": {
+    "web_search": {
+      "description": "Searches the web for public information: the founder's company at the start, and a valid general question of the founder that the FAQ does not answer, for example about a market. One search per question. It returns the results and says what to reply.",
+      "fields": {
+        "query": "A short search query that never contains confidential details from the conversation. Example: \"Nordlicht Robotics Startup\"."
+      }
+    },
+    "submit_initial": {
+      "description": "Writes everything down when the voice agent asks for it after the questions. It takes no input: the backend writes the founder's answers from the conversation itself, has them checked and tells the voice agent what comes next.",
+      "fields": {}
+    },
+    "submit_follow_up": {
+      "description": "Writes the follow-up round down when the voice agent asks for it. It takes no input: the backend writes the founder's answers from the conversation itself and tells the voice agent what comes next.",
+      "fields": {}
+    }
+  }
+}

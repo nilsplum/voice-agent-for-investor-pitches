@@ -1,0 +1,301 @@
+{
+ "description": "Recorded conversations with a simulated founder (fictional startup Lumenfeld Analytics), cut where the agent hands over writing everything down.",
+ "transcripts": {
+  "complete": [
+   {
+    "speaker": "agent",
+    "text": "Hallo Mara Petersen. Ich schaue kurz nach Lumenfeld Analytics. Es sieht so aus, als gäbe es keine eindeutigen Treffer dazu. Danke fürs Warten. Ich stelle Ihnen gleich nacheinander einzelne Fragen; das Gespräch dauert etwa 10 bis 15 Minuten. Falls etwas unklar bleibt, frage ich kurz nach. Haben Sie dazu wichtige Fragen, bevor wir starten?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Nein, ich habe keine wichtigen Fragen. Wir können gerne starten"
+   },
+   {
+    "speaker": "agent",
+    "text": "Super, Mara Petersen. In welcher Branche ist Lumenfeld Analytics tätig?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Wir sind im Bereich Climate Tech tätig und entwickeln B2B-Software für energieeffizienz in der Industrie"
+   },
+   {
+    "speaker": "agent",
+    "text": "Alles klar, danke. Wer gehört zu Ihrem Gründungsteam und welche Rollen sowie Erfahrungen bringen Sie mit?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Unser Gründungsteam besteht aus drei Personen. Ich bin Mara Petersen, CEO, und bringe zehn Jahre Erfahrung in der Energieberatung bei Siemens mit. Tobias Lindner ist unser CTO und hat im maschinellen Lernen promoviert. Selin Arslan ist COO und war zuvor Werksleiterin bei Bosch. Außerdem haben wir vier Mitarbeitende"
+   },
+   {
+    "speaker": "agent",
+    "text": "Danke schön. Welches Problem lösen Sie, und wie löst Ihr Produkt es?"
+   },
+   {
+    "speaker": "founder",
+    "text": "In fabriken bleibt viel energie ungenutzt. Und heute wird das oft nur durch teure manuelle Energieaudits aufgedeckt. Unsere Funksensoren und Software finden diese Verschwendung und ermöglichen im Schnitt fünfzehn Prozent Einsparung. Die Nachrüstung ist innerhalb einer Woche und ohne Produktionsstopp möglich"
+   },
+   {
+    "speaker": "agent",
+    "text": "Verstehe, danke. Wie weit ist Ihr Produkt heute?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Wir haben ein MVP, das bereits in drei Pilotwerken läuft. Noch fehlen ERP-Anbindungen und eine Zertifizierung"
+   },
+   {
+    "speaker": "agent",
+    "text": "Okay. Welche Traktion haben Sie bisher?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Wir haben drei zahlende Piloten mit zusammen achtundvierzigtausend Euro Jahresumsatz und zwei Absichtserklärungen"
+   },
+   {
+    "speaker": "agent",
+    "text": "Alles klar. Wer sind Ihre Zielkunden, und wie groß ist Ihr Markt?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Unsere Zielkunden sind mittelständische Fertiger mit fünfzig bis fünfhundert Mitarbeitenden zunächst in Bayern und Baden-Württemberg. In Deutschland gibt es etwa fünfundzwanzigtausend solcher Unternehmen, das Marktvolumen liegt bei rund zwei Milliarden Euro"
+   },
+   {
+    "speaker": "agent",
+    "text": "Danke, das ist konkret. Wer sind Ihre wichtigsten Wettbewerber, und wie heben Sie sich von ihnen ab?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Unsere wichtigsten Wettbewerber sind Siemens und Schneider Electric, die eher teuer und auf Großwerke ausgerichtet sind. Sowie Berater mit manuellen Energieaudits. Wir bieten eine günstigere Nachrüstung die innerhalb einer Woche installiert ist"
+   },
+   {
+    "speaker": "agent",
+    "text": "Wie viel Kapital brauchen Sie, warum gerade jetzt, und wofür setzen Sie es hauptsächlich ein?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Wir benötigen zwei Komma fünf Millionen Euro, weil unsere Piloten jetzt in Verträge übergehen und die Energiepreise hoch sind. Das Kapital setzen wir hauptsächlich für ein Vertriebsteam, ERP-Anbindungen und die Zertifizierung ein. Die Seed-Runde planen wir für das dritte Quartal zweitausendsiebenundzwanzig"
+   },
+   {
+    "speaker": "agent",
+    "text": "Danke. Sie haben die Runde und den Zeitpunkt schon genannt. Was ist der nächste große Meilenstein Ihres Start-ups, und bis wann soll er erreicht sein?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Unser nächster großer Meilenstein sind zwanzig zahlende Kunden bis Ende zweitausendsiebenundzwanzig"
+   },
+   {
+    "speaker": "agent",
+    "text": "Gibt es noch etwas, das Sie uns erzählen möchten?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Nein, das war alles"
+   }
+  ],
+  "declined": [
+   {
+    "speaker": "agent",
+    "text": "Hallo Mara Petersen. Ich freue mich sehr, dass Sie von Lumenfeld Analytics da sind. Das Gespräch dauert etwa 10 bis 15 Minuten, ich stelle eine Frage nach der anderen und wenn etwas unklar bleibt, stelle ich eine kurze Rückfrage. Ich schaue gerade noch kurz nach Lumenfeld Analytics, aber ich hab grad nichts Eindeutiges dazu gefunden. Bevor wir starten: Haben Sie noch wichtige Fragen an mich?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Nein, im Moment habe ich keine wichtigen Fragen"
+   },
+   {
+    "speaker": "agent",
+    "text": "Alles klar. Dann starten wir. In welcher Branche ist Ihr Startup tätig?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Wir sind im Bereich Climate Tech tätig und entwickeln B2B-Software für Energieeffizienz-Management in der Industrie"
+   },
+   {
+    "speaker": "agent",
+    "text": "Verstanden. Wer gehört zu Ihrem Gründungsteam, und welche Rollen und Erfahrungen bringen Sie mit?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Unser Gründerteam besteht aus mir, Mara Petersen, als CEO mit zehn Jahren Erfahrung in der Energie-Beratung bei Siemens, Tobias Lindner als CTO mit einer Promotion in maschinellem Lernen und Selin Arslan als COO, die zuvor Werksleiterin bei Bosch war. Zusätzlich haben wir vier Mitarbeitende"
+   },
+   {
+    "speaker": "agent",
+    "text": "Danke. Welches Problem lösen Sie, und wie löst Ihr Produkt es?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Viele mittelständische Fabriken verschwenden Energie, und die Ursachen werden heute oft nur durch teure manuelle Audits gefunden. Unsere Funksensoren und Software erkennen diese Energieverschwendung und ermöglichen im Schnitt fünfzehn Prozent Einsparung. Die Sensoren lassen sich innerhalb einer Woche nachrüsten, ohne den Produktionsbetrieb zu unterbrechen"
+   },
+   {
+    "speaker": "agent",
+    "text": "Danke für die Erklärung. Wie weit ist Ihr Produkt heute?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Wir haben ein MVP, das bereits in drei Pilotwerken läuft. Noch fehlen ERP-Anbindungen und eine Zertifizierung"
+   },
+   {
+    "speaker": "agent",
+    "text": "Welche Traktion haben Sie bisher?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Wir haben drei zahlende Piloten mit zusammen achtundvierzigtausend Euro Jahresumsatz und zwei Absichtserklärungen"
+   },
+   {
+    "speaker": "agent",
+    "text": "Wer sind Ihre Zielkunden, und wie groß ist Ihr Markt?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Unser Zielkunden sind mittelständische Fertigungsunternehmen mit fünfzig bis fünfhundert Mitarbeitenden. Wir starten in Bayern und Baden-Württemberg. In Deutschland gibt es etwa fünfundzwanzigtausend passende Unternehmen, mit einem Marktvolumen von rund zwei Milliarden Euro"
+   },
+   {
+    "speaker": "agent",
+    "text": "Wer sind Ihre wichtigsten Wettbewerber, und wie heben Sie sich von ihnen ab?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Siemens und Schneider Electric bieten teure Lösungen für Großwerke, außerdem gibt es manuelle Energie-Audits von Beratern. Wir heben uns durch eine günstige Nachrüstung ab, die innerhalb einer Woche und ohne Produktionsstopp installiert ist"
+   },
+   {
+    "speaker": "agent",
+    "text": "Wie viel Kapital brauchen Sie, warum und wofür setzen Sie es ein?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Dazu möchte ich im Moment nichts sagen"
+   },
+   {
+    "speaker": "agent",
+    "text": "In Ordnung. Welche Finanzierungsrunde planen Sie, und wann?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Dazu möchte ich im Moment nichts sagen"
+   },
+   {
+    "speaker": "agent",
+    "text": "Alles klar. Was ist der nächste große Meilenstein Ihres Startups?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Unser nächster großer Meilenstein ist, bis Ende zweitausendsiebenundzwanzig zwanzig zahlende Kunden zu gewinnen"
+   },
+   {
+    "speaker": "agent",
+    "text": "Danke. Gibt es noch etwas, das Sie uns erzählen möchten?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Nein"
+   }
+  ],
+  "correction": [
+   {
+    "speaker": "agent",
+    "text": "Hallo, ich freu mich, heute mit Ihnen zu sprechen, Mara Petersen von Lumenfeld Analytics. Ich schaue gerade online kurz nach Infos zu Lumenfeld Analytics. In etwa zehn bis fünfzehn Minuten gehen wir gemeinsam einen Fragenkatalog durch, eine Frage nach der anderen. Wenn etwas unklar bleibt, stelle ich jeweils eine kurze Rückfrage. Haben Sie vorher noch wichtige Fragen, bevor wir loslegen?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Nein, ich habe gerade keine wichtigen Fragen. Wir können gerne loslegen"
+   },
+   {
+    "speaker": "agent",
+    "text": "Dann starten wir. In welcher Branche ist Ihr Startup tätig?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Wir sind im Bereich Climate Tech unterwegs und entwickeln B2B-Software für Energieeffizienz in der Industrie. Ich bin Mara Petersen, CEO, und bringe zehn Jahre Energieberatung bei Siemens mit. Mein Mitgründer Tobias Lindner ist unser CTO und hat in maschinellem Lernen promoviert, und Selin Aslan ist COO und war zuvor Werksleiterin bei Bosch. Zusammen mit vier Mitarbeitenden entwickeln wir Funksensoren und Software, die Energieverständlich in Verbräuchen aufspüren. Im Schnitt können unsere Kunden damit 15 Prozent Energie einsparen, und die Nachrüstung ist ohne Produktionsstopp möglich. Unser MVP läuft derzeit in drei Pilotwerken, noch fehlen ERP-Anbindungen und eine Zertifizierung. Wir haben drei zahlende Piloten mit zusammen achtundvierzigtausend Euro Jahresumsatz sowie zwei Absichtserklärungen. Im Vergleich zu den teuren Lösungen von Siemens und Schneider Electric für Großwerke und zu manuellen Energie-Audits punkten wir mit einer günstig en Nachrüstung, die innerhalb einer Woche installiert ist"
+   },
+   {
+    "speaker": "agent",
+    "text": "Wer sind Ihre Zielkunden, und wie groß ist Ihr Markt?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Übrigens eine Korrektur: Wir haben fünf Mitarbeitende, nicht vier. Unsere Zielkunden sind mittelständische Fertiger mit fünfzig bis fünfhundert Mitarbeitenden, zunächst in Bayern und Baden-Württemberg. In Deutschland gibt es davon etwa fünfundzwanzigtausend Unternehmen, bei einem Marktvolumen von rund zwei Milliarden Euro"
+   },
+   {
+    "speaker": "agent",
+    "text": "Danke für die Korrektur, und wie viel Kapital brauchen Sie, warum und wofür setzen Sie es ein?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Wir benötigen zwei Komma fünf Millionen Euro. Jetzt ist der richtige Zeitpunkt, weil unsere Piloten in Verträge übergehen und die Energiepreise hoch sind. Das Kapital setzen wir für den Aufbau des Vertriebsteams ERP-Anbindungen . und die Zertifizierung ein"
+   },
+   {
+    "speaker": "agent",
+    "text": "Welche Finanzierungsrunde planen Sie, und wann?"
+   },
+   {
+    "speaker": "founder",
+    "text": "? Wir planen eine Seed-Runde im dritten Quartal zweitausendsiebenundzwanzig"
+   },
+   {
+    "speaker": "agent",
+    "text": "Was ist der nächste große Meilenstein Ihres Startups?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Unser nächster großer Meilenstein ist es, bis Ende zweitausendsiebenundzwanzig zwanzig zahlende Kunden zu gewinnen"
+   },
+   {
+    "speaker": "agent",
+    "text": "Gibt es noch etwas, das Sie uns erzählen möchten?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Nein"
+   }
+  ],
+  "stop": [
+   {
+    "speaker": "agent",
+    "text": "Hallo Mara Petersen! Schön, dass Sie Zeit für dieses Gespräch zu Lumenfeld Analytics haben. In etwa 10 bis 15 Minuten gehen wir Frage für Frage durch, und wenn etwas unklar bleibt, stelle ich dazu noch eine kurze Rückfrage. Parallel schaue ich mir kurz öffentlich verfügbare Infos zu Lumenfeld Analytics an. Haben Sie vorab wichtige Fragen, bevor wir loslegen?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Nein, danke. Ich habe vorab keine wichtigen Fragen"
+   },
+   {
+    "speaker": "agent",
+    "text": "Alles klar."
+   },
+   {
+    "speaker": "founder",
+    "text": "Wir können gerne loslegen"
+   },
+   {
+    "speaker": "agent",
+    "text": "Prima, dann starten wir mit der ersten Frage: In welcher Branche ist Ihr Startup tätig?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Wir entwickeln B2B-Software Software für Energieeffizienz in der Industrie. Unser Fokus liegt auf Climate Tech"
+   },
+   {
+    "speaker": "agent",
+    "text": "Verstanden, danke. Und wer gehört zu Ihrem Gründungsteam, und welche Rollen und Erfahrungen bringen Sie mit?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Wir sind zu dritt im Gründungsteam. Ich bin Mara Petersen, CEO, und habe zehn Jahre Energieberatung bei Siemens gemacht. Tobias Lindner ist unser CTO und promovierter Experte für maschinelles Lernen Selin Arslan ist COO und war zuvor Werksleiterin bei Bosch. Dazu kommen vier Mitarbeitende"
+   },
+   {
+    "speaker": "agent",
+    "text": "Danke für die Klarheit. Welches Problem lösen Sie und wie löst Ihr Produkt es? Also gern das Kundenproblem und die Lösung in einfachen Worten auch im Vergleich zu heutigen Alternativen."
+   },
+   {
+    "speaker": "founder",
+    "text": "Viele mittelständische Fabriken verschwenden Energie, und das wird heute oft nur durch teure manuelle Energieaudits sichtbar. Unsere Funksensoren und unsere Software finden diese Einsparpotenziale und ermöglichen Kunden im Schnitt 15 Prozent weniger Energieverbrauch. Die Sensoren lassen sich innerhalb einer Woche nachrüsten, ohne den Produktionsbetrieb zu stoppen"
+   },
+   {
+    "speaker": "agent",
+    "text": "Alles klar. Wie weit ist Ihr Produkt heute? Also ob Idee, Prototyp, MVP, Pilot oder fertiges Produkt, und was steht noch aus?"
+   },
+   {
+    "speaker": "founder",
+    "text": "Wir haben ein MVP, das bereits in drei Pilotwerken läuft. Noch ausstehen ERP-Anbindungen und eine Zertifizierung. Es tut mir leid, ich muss dringend los. Können wir das hier bitte be enden"
+   }
+  ]
+ }
+}

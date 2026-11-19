@@ -1,0 +1,23 @@
+// The type check of the frontend (the first part of `npm run check`, run by ./scripts/test.sh)
+// against the types generated from the backend (src/api/types.ts).
+// TypeScript stays on 5.9: openapi-typescript, which generates those types, needs TypeScript's
+// JavaScript compiler API, which the native TypeScript 7 does not offer yet.
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "types": ["vite/client"],
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+  "include": ["src", "vite.config.ts"]
+}

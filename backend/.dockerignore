@@ -1,0 +1,3 @@
+# Keeps local caches out of the backend image's build context.
+**/__pycache__
+.pytest_cache

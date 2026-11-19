@@ -1,0 +1,31 @@
+{
+  "voice_instructions": [
+    "voice_agent.role",
+    "voice_agent.style",
+    "voice_agent.flow",
+    "voice_agent.delegation",
+    "voice_agent.founders_questions",
+    "voice_agent.faq",
+    "voice_agent.questionnaire"
+  ],
+  "voice_kickoff": [
+    "voice_agent.kickoff"
+  ],
+  "note_taker_instructions": [
+    "note_taker.role"
+  ],
+  "note_taker_kickoff": [
+    "note_taker.kickoff"
+  ],
+  "writer_answers": [
+    "writer.answers",
+    "writer.rules"
+  ],
+  "writer_round": [
+    "writer.round",
+    "writer.rules"
+  ],
+  "reviewer_instructions": [
+    "reviewer.rules"
+  ]
+}

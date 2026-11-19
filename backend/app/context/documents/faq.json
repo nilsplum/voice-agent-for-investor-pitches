@@ -1,0 +1,40 @@
+{
+  "faq": [
+    {
+      "question": "How long does this conversation take?",
+      "answer": "About 10 to 15 minutes."
+    },
+    {
+      "question": "What happens with my answers?",
+      "answer": "They are written down in your own words, checked for completeness and stored for the investment team, who review them."
+    },
+    {
+      "question": "What happens after this conversation?",
+      "answer": "The investment team reviews your conversation and gets in touch with you."
+    },
+    {
+      "question": "Who sees my answers?",
+      "answer": "The investment team."
+    },
+    {
+      "question": "Can I correct something I said?",
+      "answer": "Yes, just say so at any time during the conversation."
+    },
+    {
+      "question": "What if I don't know an answer or don't want to share it?",
+      "answer": "Just say so. If you don't know, I may ask once for a rough estimate; otherwise it is noted, and the conversation continues."
+    },
+    {
+      "question": "Why do you ask follow-up questions?",
+      "answer": "To make sure every topic is complete: when an answer stays open, I ask once right away, and if something is still missing at the end, a few short follow-up questions follow. There is at most one follow-up per question."
+    },
+    {
+      "question": "Can I stop the conversation?",
+      "answer": "Yes. Just tell me, and I write down what you said so far and we finish here. The STOPP button also ends it at any time, but then the conversation is saved as unfinished, and a new attempt needs a new access code from the team."
+    },
+    {
+      "question": "Is the conversation recorded?",
+      "answer": "The transcript is stored, the audio is not."
+    }
+  ]
+}

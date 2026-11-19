@@ -1,0 +1,65 @@
+# The app's only environment: the database, the backend and the frontend, each in its container,
+# plus the voice test (profile e2e, run only by ./scripts/test.sh --complete). The scripts run
+# compose for the developer (through the helpers in scripts/helpers/common.sh); the README names the
+# one command worth running by hand. The browser reaches only the frontend's port: the frontend's dev
+# server proxies /api to the backend, so the browser sees one origin.
+services:
+  db:
+    image: postgres:18
+    environment:
+      POSTGRES_DB: app  # must match DATABASE_NAME in backend/app/config.py
+      # No password, on purpose: this database publishes no port, so only the app's own containers
+      # on this compose network can reach it, and the connection URL contains no secret.
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - db-data:/var/lib/postgresql  # PostgreSQL 18 images keep their data below this path
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres", "-d", "app"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+  backend:
+    build: ./backend
+    volumes:
+      - ./backend:/app       # development: code changes apply at once (uvicorn --reload)
+      - ./secrets:/secrets   # secrets.yaml (read only by app/config.py) and its template
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      # Healthy once the migrations ran and the app answers, so `compose up --wait` (the voice test)
+      # really waits for it. The slim image has no curl, so Python asks. Every second while the app
+      # starts, then every 30 seconds, to keep the backend's log quiet.
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/app-config', timeout=2)"]
+      interval: 30s
+      timeout: 3s
+      start_period: 120s
+      start_interval: 1s
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules    # keeps the image's installed packages visible under the mounted code
+    depends_on:
+      - backend
+
+  e2e:
+    # The voice conversation test: Chrome plays recorded founder answers into the real app. It
+    # shares the frontend's network, so http://localhost:5173 is a secure context for the microphone
+    # and passes Vite's host check, exactly like a developer's browser.
+    profiles: [e2e]
+    build: ./e2e
+    volumes:
+      - ./e2e:/e2e
+    network_mode: "service:frontend"
+    environment:  # passed through from ./scripts/test.sh; the key is never written to a file
+      - OPENAI_API_KEY
+      - E2E_EMAIL
+      - E2E_CODE
+
+volumes:
+  db-data:

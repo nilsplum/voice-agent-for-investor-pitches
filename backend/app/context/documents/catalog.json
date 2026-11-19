@@ -1,0 +1,70 @@
+{
+  "default_questions": [
+    {
+      "id": 1,
+      "topic": "Branche",
+      "question": "In welcher Branche ist Ihr Startup tätig?",
+      "context": "Die Marktkategorie, zum Beispiel Health Tech, B2B-Software oder Climate Tech. Ein oder zwei Wörter reichen; bei mehreren Branchen zählt, welche an erster Stelle steht."
+    },
+    {
+      "id": 2,
+      "topic": "Team",
+      "question": "Wer gehört zu Ihrem Gründungsteam, und welche Rollen und Erfahrungen bringen Sie mit?",
+      "context": "Die Zahl der Gründer und Mitarbeitenden, wer wofür verantwortlich ist und welche Erfahrung dieses Team befähigt, das Unternehmen aufzubauen."
+    },
+    {
+      "id": 3,
+      "topic": "Produkt",
+      "question": "Welches Problem lösen Sie, und wie löst Ihr Produkt es?",
+      "context": "Das Problem der Kunden, die Lösung in einfachen Worten und was sie besser macht als die Art, wie das Problem heute gelöst wird."
+    },
+    {
+      "id": 4,
+      "topic": "Entwicklungsstand",
+      "question": "Wie weit ist Ihr Produkt heute?",
+      "context": "Idee, Prototyp, MVP, Pilot oder fertiges Produkt, dazu was schon gebaut ist und was noch fehlt."
+    },
+    {
+      "id": 5,
+      "topic": "Traktion",
+      "question": "Welche Traktion haben Sie bisher?",
+      "context": "Messbare Fortschritte wie Nutzer, zahlende Kunden, Umsatz, Wachstum, Pilotprojekte oder Absichtserklärungen, wenn möglich mit Zahlen. ‚Noch keine‘ ist eine gültige Antwort."
+    },
+    {
+      "id": 6,
+      "topic": "Zielmarkt",
+      "question": "Wer sind Ihre Zielkunden, und wie groß ist Ihr Markt?",
+      "context": "Das Kundensegment, die Region, in der das Startup beginnt, und die Marktgröße (zum Beispiel die Zahl möglicher Kunden oder das Marktvolumen)."
+    },
+    {
+      "id": 7,
+      "topic": "Wettbewerb",
+      "question": "Wer sind Ihre wichtigsten Wettbewerber, und wie heben Sie sich von ihnen ab?",
+      "context": "Direkte Wettbewerber und die Alternativen, die Kunden heute nutzen, und der Vorteil des Startups gegenüber ihnen."
+    },
+    {
+      "id": 8,
+      "topic": "Finanzierungsbedarf",
+      "question": "Wie viel Kapital brauchen Sie, warum, und wofür setzen Sie es ein?",
+      "context": "Der Betrag, der Grund für die Finanzierung zum jetzigen Zeitpunkt und die wichtigsten Verwendungszwecke (zum Beispiel Einstellungen, Produktentwicklung oder Vertrieb)."
+    },
+    {
+      "id": 9,
+      "topic": "Geplante Runde",
+      "question": "Welche Finanzierungsrunde planen Sie, und wann?",
+      "context": "Die Art der Runde (Pre-Seed, Seed, Series A, ...) und der geplante Zeitpunkt."
+    },
+    {
+      "id": 10,
+      "topic": "Nächster Schritt",
+      "question": "Was ist der nächste große Meilenstein Ihres Startups?",
+      "context": "Das nächste konkrete Ziel, auf das das Startup hinarbeitet (zum Beispiel ein Launch, die ersten zahlenden Kunden oder eine wichtige Einstellung), und bis wann es erreicht sein soll."
+    },
+    {
+      "id": 11,
+      "topic": "Sonstiges",
+      "question": "Gibt es noch etwas, das Sie uns erzählen möchten?",
+      "context": "Raum für Wichtiges, das die anderen Fragen nicht abgedeckt haben."
+    }
+  ]
+}

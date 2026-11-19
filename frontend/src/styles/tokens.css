@@ -1,0 +1,25 @@
+/*
+ * The colour tokens: every colour of the app is defined here, once. base.css and the components use
+ * only these variables, never a colour of their own (and never hand-style a button to dodge them).
+ * Light theme.
+ */
+:root {
+  --color-bg: #f4f6f9;
+  --color-surface: #ffffff;
+  --color-text: #1b1f24;
+  --color-muted: #5b6676;
+  --color-border: #dce1e7;
+  --color-primary: #1f5fd6;        /* blue: START and every primary action */
+  --color-primary-soft: #e8effc;
+  --color-on-primary: #ffffff;     /* text on the primary, danger and success fills */
+  --color-danger: #c8283b;         /* red: STOPP, destructive confirmations and errors */
+  --color-danger-soft: #fdecee;
+  --color-success: #1d7f47;
+  --color-success-soft: #e5f3eb;
+  --color-warning: #95580a;
+  --color-warning-soft: #fcf1df;
+  --color-founder-bubble: #e8effc; /* the conversation view's two speakers */
+  --color-agent-bubble: #ffffff;
+  --color-shadow: rgba(16, 24, 40, 0.08);
+  --color-backdrop: rgba(16, 24, 40, 0.45);
+}

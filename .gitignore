@@ -1,0 +1,13 @@
+# Never in git: local environments, caches, secrets, generated intermediates, spike logs and the
+# developer's private notes.
+_docs/internal/
+.venv/
+__pycache__/
+.env
+.env.*
+!.env.example
+drafts/**/events-*.jsonl
+secrets/secrets.yaml
+node_modules/
+frontend/src/api/.openapi.json
+.pytest_cache/

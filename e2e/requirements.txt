@@ -1,0 +1,6 @@
+# The voice test's packages, pinned and installed only by e2e/Dockerfile (never on the host).
+playwright==1.65.2  # must match the tag of the Playwright image in e2e/Dockerfile
+pytest==9.2.0
+pytest-playwright==0.10.0
+httpx==0.28.1  # the text-to-speech requests of clips.py
+psycopg[binary]==3.3.9  # reads the stored result from the app's database

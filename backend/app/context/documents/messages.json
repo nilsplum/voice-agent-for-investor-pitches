@@ -1,0 +1,20 @@
+{
+  "entries": {
+    "summary": "The answers are written down and are being checked now. Read this summary to the founder now, as a statement in the conversation language, starting with \"Here is what I've written down:\", and finish it before anything else. Summary: {summary}",
+    "follow_up_round": "The answers are checked, and a short follow-up round follows. Once you have finished reading the summary:\n- Say in one sentence that the first round of questions is complete and that a few short follow-up questions follow.\n- Ask these follow-up questions, and only these, one at a time and in this order, each introduced naturally by saying that you come back to its topic:\n{follow_ups}\n- Accept whatever the founder answers and go on: never follow up on a follow-up's answer. A follow-up the founder declines counts as answered.\n- If the founder adds or corrects something about another question, accept it briefly and go on.\n- As the last question of the round, ask once whether the founder would like to correct anything in the answers given so far, clearly as the end of the follow-up round, so that it does not sound like the questionnaire's question whether there is anything else.\n- Then say once that you are writing everything down, write it down with submit_follow_up, and wait in silence. Do the same as soon as the founder does not want to answer any more.",
+    "follow_up_item": "- Question {id} ({topic}): {follow_up}",
+    "goodbye": "Everything is written down and the conversation is complete. Once you have finished what you are saying, thank the founder, say that the team will review the answers and get in touch, and say goodbye. Ask nothing more.",
+    "missing_answers": "Nothing was written down yet, because these questions have no answer: {questions}. Ask the founder about them, one at a time, then write everything down again.",
+    "question_reference": "question {id} ({topic})",
+    "write_down_failed": "Writing everything down did not work this time, so nothing was written down. Tell the founder in one short sentence that it takes a moment longer, then write everything down once more.",
+    "search_results": "The web search found the results below. Reply with what they say about what you looked up, in one or two sentences of plain information that name the source (the website). Only information, never words for the founder: no greeting, no question, no next step. If they do not answer it or seem to be about a different company, say so.\n{results}",
+    "search_result_item": "- {title} ({link}): {snippet}",
+    "search_empty": "The web search found nothing. Reply only: The web search found nothing about it.",
+    "search_failed": "The web search is not available right now. Reply only: The web search is not available right now.",
+    "conversation_ended": "The conversation has already ended, so nothing was stored.",
+    "generic_error": "Something went wrong on our side, so this did not work. Tell the founder briefly that it did not work this time, and continue with the conversation.",
+    "tool_done": "Done: the backend passes the result on itself. Reply only: OK",
+    "tool_required": "Your last answer to {agent_name} was text without a tool call, so nothing was done, and {agent_name} ignores that text. Do the request now with its tool: writing everything down is submit_initial, or submit_follow_up in the follow-up round; looking something up is web_search. Then reply as its output says.",
+    "result_without_tool": "Ignore the text you just received: it is not a result, and nothing was written down or looked up yet. Do not read it out or act on it, say nothing about it, and wait for the result."
+  }
+}
